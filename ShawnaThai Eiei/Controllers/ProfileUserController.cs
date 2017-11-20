@@ -10,7 +10,7 @@ namespace ShawnaThai_Eiei.Controllers
 {
     public class ProfileUserController : Controller
     {
-        ShawnaThaiEntities db = new ShawnaThaiEntities);
+        ShawnaThaiEntities db = new ShawnaThaiEntities();
         // GET: Profile
         [HttpGet]
         public ActionResult ShowUser(int? id)
