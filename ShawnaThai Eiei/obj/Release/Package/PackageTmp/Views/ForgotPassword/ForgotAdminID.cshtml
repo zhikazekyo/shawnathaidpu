@@ -3,5 +3,79 @@
     ViewBag.Title = "ForgotAdminID";
 }
 
-<h2>ForgotAdminID</h2>
+<html>
+<head>
+    <style type="text/css">
+        .masthead {
+            height: 980px
+        }
+    </style>
+</head>
 
+@using (Html.BeginForm())
+{
+    <body id="page-top">
+        <header class="masthead">
+            <div class="container">
+                <div class="intro-text">
+                    <div class="intro-heading" style="font-size:50px;position:relative;top:-160px;">กรอกข้อมูลเพื่อ รีเซ็ตรหัสผ่าน</div>
+                    <div class="col-md-12">
+                        <br><br><br><br>
+
+                        <div class="form-group">
+                            <div class="col-md-4" style="text-align:left; position:relative;right:-370px;top:-200px;">
+                                <label style="color:white;font-size:24px;">อีเมล์ : </label>
+                            </div>
+                            <div class="col-md-8" style="text-align:left; position:relative;right:-450px; top:-240px">
+                                <input id="AD_Email" name="AD_Email" class="form-control" style="width:300px" type="text" maxlength="50" title="ใส่อีเมล์ที่ต้องการจะส่ง">
+                                <br />
+                            </div>
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-4" style="text-align:left; position:relative;right:-305px;top:-220px;">
+                                <label style="color:white;font-size:24px;">แอดมินไอดี : </label>
+                            </div>
+                            <div class="col-md-8" style="text-align:left; position:relative;right:-450px; top:-260px">
+                                <input id="AD_ID" name="AD_ID" class="form-control" style="width:300px" pattern="[a-zA-Z0-9]+" type="text" minlength="6" maxlength="18" title="ใส่รหัสแอดมินของท่าน">
+                                <p style="color:red ; font-weight:bold">@ViewBag.Error1</p>
+                                <br />
+                            </div>
+                            <p class="help-block text-danger"></p>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-4" style="text-align:left; position:relative;right:-285px;top:-250px;">
+                                <label style="color:white;font-size:24px;">เบอร์โทรศัพท์ : </label>
+                            </div>
+                            <div class="col-md-8" style="text-align:left; position:relative;right:-450px; top:-290px">
+                                <input id="AD_Tel" name="AD_Tel" class="form-control" style="width:300px" pattern="[0-9]+" type="text" maxlength="10" title="ใส่เบอร์โทรศัพท์">
+                                <p style="color:red ; font-weight:bold">@ViewBag.Error2</p>
+                                <br />
+                            </div>
+                            <p class="help-block text-danger"></p>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-8" style="position:relative;right:-200px;top:-280px;">
+                                <input class="btn btn-xl" type="submit" value="รีเซ็ตรหัสผ่าน" onclick="myFunction()" />
+                                <input class="btn btn-xl" type="submit" value="ย้อนกลับ" onclick="location.href='@Url.Action("SelectForgot", "ForgotPassword")';" />
+                            </div>
+                        </div>
+
+                        @if (ViewBag.ok != null)
+                        {
+
+                            <script>
+                                    alert("รหัสผ่านใหม่จะถูกส่งไปยังอีเมล์ของท่าน");
+                            </script>
+
+                        }
+                    </div>
+                </div>
+                <hr />
+            </div>
+        </header>
+    </body>
+}
+</html>
