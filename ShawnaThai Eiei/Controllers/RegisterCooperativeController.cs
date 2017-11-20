@@ -15,7 +15,7 @@ namespace ShawnaThai_Eiei.Controllers
     public class RegisterCooperativeController : Controller
     {
         // GET: RegisterCooperative
-        ShawnaThai_DB_Azure_V3Entities db = new ShawnaThai_DB_Azure_V3Entities();
+        ShawnaThaiEntities db = new ShawnaThaiEntities();
         public ActionResult RegisterCooperative()
         {
             return View();

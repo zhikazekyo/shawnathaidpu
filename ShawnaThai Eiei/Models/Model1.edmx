@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Model2.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="ShawnaThaiModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Address_Coop">
           <Key>
             <PropertyRef Name="Coop_A_Sup" />
@@ -229,7 +229,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="Model2StoreContainer">
+        <EntityContainer Name="ShawnaThaiModelStoreContainer">
           <EntitySet Name="Address_Coop" EntityType="Self.Address_Coop" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AddressFarmer" EntityType="Self.AddressFarmer" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Admin_Cooperative" EntityType="Self.Admin_Cooperative" Schema="dbo" store:Type="Tables" />
@@ -282,7 +282,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="Model2" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="ShawnaThaiModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Address_Coop">
           <Key>
             <PropertyRef Name="Coop_A_Sup" />
@@ -495,7 +495,7 @@
           <End Role="History_Sell" Type="Self.History_Sell" Multiplicity="*" />
           <End Role="User" Type="Self.User" Multiplicity="*" />
         </Association>
-        <EntityContainer Name="ShawnaThai_DB_Azure_V3Entities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="ShawnaThaiEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Address_Coop" EntityType="Self.Address_Coop" />
           <EntitySet Name="AddressFarmers" EntityType="Self.AddressFarmer" />
           <EntitySet Name="Admin_Cooperative" EntityType="Self.Admin_Cooperative" />
@@ -544,9 +544,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Model2StoreContainer" CdmEntityContainer="ShawnaThai_DB_Azure_V3Entities">
+        <EntityContainerMapping StorageEntityContainer="ShawnaThaiModelStoreContainer" CdmEntityContainer="ShawnaThaiEntities">
           <EntitySetMapping Name="Address_Coop">
-            <EntityTypeMapping TypeName="Model2.Address_Coop">
+            <EntityTypeMapping TypeName="ShawnaThaiModel.Address_Coop">
               <MappingFragment StoreEntitySet="Address_Coop">
                 <ScalarProperty Name="Coop_A_Sup" ColumnName="Coop_A_Sup" />
                 <ScalarProperty Name="Coop_A_District" ColumnName="Coop_A_District" />
@@ -555,7 +555,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="AddressFarmers">
-            <EntityTypeMapping TypeName="Model2.AddressFarmer">
+            <EntityTypeMapping TypeName="ShawnaThaiModel.AddressFarmer">
               <MappingFragment StoreEntitySet="AddressFarmer">
                 <ScalarProperty Name="Farmer_A_Sup" ColumnName="Farmer_A_Sup" />
                 <ScalarProperty Name="Farmer_A_District" ColumnName="Farmer_A_District" />
@@ -564,7 +564,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Admin_Cooperative">
-            <EntityTypeMapping TypeName="Model2.Admin_Cooperative">
+            <EntityTypeMapping TypeName="ShawnaThaiModel.Admin_Cooperative">
               <MappingFragment StoreEntitySet="Admin_Cooperative">
                 <ScalarProperty Name="AD_ID" ColumnName="AD_ID" />
                 <ScalarProperty Name="AD_Password" ColumnName="AD_Password" />
@@ -575,7 +575,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Cooperatives">
-            <EntityTypeMapping TypeName="Model2.Cooperative">
+            <EntityTypeMapping TypeName="ShawnaThaiModel.Cooperative">
               <MappingFragment StoreEntitySet="Cooperative">
                 <ScalarProperty Name="Coop_Name" ColumnName="Coop_Name" />
                 <ScalarProperty Name="Coop_Tel" ColumnName="Coop_Tel" />
@@ -589,7 +589,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Farmers">
-            <EntityTypeMapping TypeName="Model2.Farmer">
+            <EntityTypeMapping TypeName="ShawnaThaiModel.Farmer">
               <MappingFragment StoreEntitySet="Farmer">
                 <ScalarProperty Name="Farmer_IDCard" ColumnName="Farmer_IDCard" />
                 <ScalarProperty Name="Farmer_Name" ColumnName="Farmer_Name" />
@@ -603,7 +603,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="History_Sell">
-            <EntityTypeMapping TypeName="Model2.History_Sell">
+            <EntityTypeMapping TypeName="ShawnaThaiModel.History_Sell">
               <MappingFragment StoreEntitySet="History_Sell">
                 <ScalarProperty Name="Sell_NumID" ColumnName="Sell_NumID" />
                 <ScalarProperty Name="Sell_Date" ColumnName="Sell_Date" />
@@ -612,7 +612,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Product_Rice">
-            <EntityTypeMapping TypeName="Model2.Product_Rice">
+            <EntityTypeMapping TypeName="ShawnaThaiModel.Product_Rice">
               <MappingFragment StoreEntitySet="Product_Rice">
                 <ScalarProperty Name="ProD_IDSell" ColumnName="ProD_IDSell" />
                 <ScalarProperty Name="ProD_Pic" ColumnName="ProD_Pic" />
@@ -626,7 +626,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="RiceTypes">
-            <EntityTypeMapping TypeName="Model2.RiceType">
+            <EntityTypeMapping TypeName="ShawnaThaiModel.RiceType">
               <MappingFragment StoreEntitySet="RiceType">
                 <ScalarProperty Name="RType_NID" ColumnName="RType_NID" />
                 <ScalarProperty Name="RType_Name" ColumnName="RType_Name" />
@@ -636,7 +636,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="Model2.sysdiagram">
+            <EntityTypeMapping TypeName="ShawnaThaiModel.sysdiagram">
               <MappingFragment StoreEntitySet="sysdiagrams">
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="principal_id" ColumnName="principal_id" />
@@ -647,7 +647,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Users">
-            <EntityTypeMapping TypeName="Model2.User">
+            <EntityTypeMapping TypeName="ShawnaThaiModel.User">
               <MappingFragment StoreEntitySet="User">
                 <ScalarProperty Name="U_IDCard" ColumnName="U_IDCard" />
                 <ScalarProperty Name="U_Password" ColumnName="U_Password" />
@@ -657,7 +657,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <AssociationSetMapping Name="History_BuyerUser" TypeName="Model2.History_BuyerUser" StoreEntitySet="History_BuyerUser">
+          <AssociationSetMapping Name="History_BuyerUser" TypeName="ShawnaThaiModel.History_BuyerUser" StoreEntitySet="History_BuyerUser">
             <EndProperty Name="History_Sell">
               <ScalarProperty Name="Sell_NumID" ColumnName="Sell_NumID" />
             </EndProperty>

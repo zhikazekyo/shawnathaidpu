@@ -13,10 +13,10 @@ namespace ShawnaThai_Eiei.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class ShawnaThai_DB_Azure_V3Entities : DbContext
+    public partial class ShawnaThaiEntities : DbContext
     {
-        public ShawnaThai_DB_Azure_V3Entities()
-            : base("name=ShawnaThai_DB_Azure_V3Entities")
+        public ShawnaThaiEntities()
+            : base("name=ShawnaThaiEntities")
         {
         }
     

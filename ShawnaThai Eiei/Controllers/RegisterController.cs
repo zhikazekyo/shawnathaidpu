@@ -15,7 +15,7 @@ namespace ShawnaThai_Eiei.Controllers
 {
     public class RegisterController : Controller
     {
-        ShawnaThai_DB_Azure_V3Entities db = new ShawnaThai_DB_Azure_V3Entities();
+        ShawnaThaiEntities db = new ShawnaThaiEntities();
         // GET: Register
         public ActionResult Register()
         {
