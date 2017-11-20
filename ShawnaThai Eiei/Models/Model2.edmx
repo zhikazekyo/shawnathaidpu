@@ -1,0 +1,691 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Model2.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Address_Coop">
+          <Key>
+            <PropertyRef Name="Coop_A_Sup" />
+            <PropertyRef Name="Coop_A_District" />
+          </Key>
+          <Property Name="Coop_A_Sup" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Coop_A_District" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Coop_A_Province" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AddressFarmer">
+          <Key>
+            <PropertyRef Name="Farmer_A_Sup" />
+            <PropertyRef Name="Farmer_A_District" />
+          </Key>
+          <Property Name="Farmer_A_Sup" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Farmer_A_District" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Farmer_A_Province" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Admin_Cooperative">
+          <Key>
+            <PropertyRef Name="AD_ID" />
+          </Key>
+          <Property Name="AD_ID" Type="varchar" MaxLength="18" Nullable="false" />
+          <Property Name="AD_Password" Type="varchar" MaxLength="18" Nullable="false" />
+          <Property Name="AD_Name" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="AD_Lastname" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="AD_Tel" Type="varchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Cooperative">
+          <Key>
+            <PropertyRef Name="Coop_Name" />
+          </Key>
+          <Property Name="Coop_Name" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Coop_Tel" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Coop_Latitude" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Coop_Longitude" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Coop_A_No" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Coop_A_Sup" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Coop_A_District" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="AD_ID" Type="varchar" MaxLength="18" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Farmer">
+          <Key>
+            <PropertyRef Name="Farmer_IDCard" />
+          </Key>
+          <Property Name="Farmer_IDCard" Type="varchar" MaxLength="13" Nullable="false" />
+          <Property Name="Farmer_Name" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Farmer_LastName" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Farmer_Tel" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Farmer_A_No" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Farmer_A_Sup" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Farmer_A_District" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Coop_Name" Type="varchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityType Name="History_BuyerUser">
+          <Key>
+            <PropertyRef Name="U_IDCard" />
+            <PropertyRef Name="Sell_NumID" />
+          </Key>
+          <Property Name="U_IDCard" Type="varchar" MaxLength="13" Nullable="false" />
+          <Property Name="Sell_NumID" Type="varchar" MaxLength="12" Nullable="false" />
+        </EntityType>
+        <EntityType Name="History_Sell">
+          <Key>
+            <PropertyRef Name="Sell_NumID" />
+          </Key>
+          <Property Name="Sell_NumID" Type="varchar" MaxLength="12" Nullable="false" />
+          <Property Name="Sell_Date" Type="datetime" Nullable="false" />
+          <Property Name="ProD_IDSell" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Product_Rice">
+          <Key>
+            <PropertyRef Name="ProD_IDSell" />
+          </Key>
+          <Property Name="ProD_IDSell" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="ProD_Pic" Type="varchar(max)" Nullable="false" />
+          <Property Name="ProD_Moisture" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="ProD_Weight" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="ProD_Price" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="ProD_CertiWeightRice" Type="varchar(max)" Nullable="false" />
+          <Property Name="RType_NID" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Farmer_IDCard" Type="varchar" MaxLength="13" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RiceType">
+          <Key>
+            <PropertyRef Name="RType_NID" />
+          </Key>
+          <Property Name="RType_NID" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="RType_Name" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="RType_Nape" Type="bit" />
+          <Property Name="RType_Napung" Type="bit" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="U_IDCard" />
+          </Key>
+          <Property Name="U_IDCard" Type="varchar" MaxLength="13" Nullable="false" />
+          <Property Name="U_Password" Type="varchar" MaxLength="18" Nullable="false" />
+          <Property Name="U_Name" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="U_Lastname" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="U_Tel" Type="varchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Cooperative_Address_Coop">
+          <End Role="Address_Coop" Type="Self.Address_Coop" Multiplicity="1" />
+          <End Role="Cooperative" Type="Self.Cooperative" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Address_Coop">
+              <PropertyRef Name="Coop_A_Sup" />
+              <PropertyRef Name="Coop_A_District" />
+            </Principal>
+            <Dependent Role="Cooperative">
+              <PropertyRef Name="Coop_A_Sup" />
+              <PropertyRef Name="Coop_A_District" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cooperative_Admin_Cooperative">
+          <End Role="Admin_Cooperative" Type="Self.Admin_Cooperative" Multiplicity="1" />
+          <End Role="Cooperative" Type="Self.Cooperative" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Admin_Cooperative">
+              <PropertyRef Name="AD_ID" />
+            </Principal>
+            <Dependent Role="Cooperative">
+              <PropertyRef Name="AD_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Farmer_AddressFarmer">
+          <End Role="AddressFarmer" Type="Self.AddressFarmer" Multiplicity="1" />
+          <End Role="Farmer" Type="Self.Farmer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AddressFarmer">
+              <PropertyRef Name="Farmer_A_Sup" />
+              <PropertyRef Name="Farmer_A_District" />
+            </Principal>
+            <Dependent Role="Farmer">
+              <PropertyRef Name="Farmer_A_Sup" />
+              <PropertyRef Name="Farmer_A_District" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Farmer_Cooperative">
+          <End Role="Cooperative" Type="Self.Cooperative" Multiplicity="1" />
+          <End Role="Farmer" Type="Self.Farmer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cooperative">
+              <PropertyRef Name="Coop_Name" />
+            </Principal>
+            <Dependent Role="Farmer">
+              <PropertyRef Name="Coop_Name" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_History_BuyerUser_History_Sell">
+          <End Role="History_Sell" Type="Self.History_Sell" Multiplicity="1" />
+          <End Role="History_BuyerUser" Type="Self.History_BuyerUser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="History_Sell">
+              <PropertyRef Name="Sell_NumID" />
+            </Principal>
+            <Dependent Role="History_BuyerUser">
+              <PropertyRef Name="Sell_NumID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_History_BuyerUser_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="History_BuyerUser" Type="Self.History_BuyerUser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="U_IDCard" />
+            </Principal>
+            <Dependent Role="History_BuyerUser">
+              <PropertyRef Name="U_IDCard" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_History_Sell_Product_Rice">
+          <End Role="Product_Rice" Type="Self.Product_Rice" Multiplicity="1" />
+          <End Role="History_Sell" Type="Self.History_Sell" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product_Rice">
+              <PropertyRef Name="ProD_IDSell" />
+            </Principal>
+            <Dependent Role="History_Sell">
+              <PropertyRef Name="ProD_IDSell" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_Rice_Farmer">
+          <End Role="Farmer" Type="Self.Farmer" Multiplicity="1" />
+          <End Role="Product_Rice" Type="Self.Product_Rice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Farmer">
+              <PropertyRef Name="Farmer_IDCard" />
+            </Principal>
+            <Dependent Role="Product_Rice">
+              <PropertyRef Name="Farmer_IDCard" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RiceType_Product_Rice">
+          <End Role="RiceType" Type="Self.RiceType" Multiplicity="1" />
+          <End Role="Product_Rice" Type="Self.Product_Rice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RiceType">
+              <PropertyRef Name="RType_NID" />
+            </Principal>
+            <Dependent Role="Product_Rice">
+              <PropertyRef Name="RType_NID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Model2StoreContainer">
+          <EntitySet Name="Address_Coop" EntityType="Self.Address_Coop" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AddressFarmer" EntityType="Self.AddressFarmer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Admin_Cooperative" EntityType="Self.Admin_Cooperative" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cooperative" EntityType="Self.Cooperative" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Farmer" EntityType="Self.Farmer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="History_BuyerUser" EntityType="Self.History_BuyerUser" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="History_Sell" EntityType="Self.History_Sell" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Product_Rice" EntityType="Self.Product_Rice" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RiceType" EntityType="Self.RiceType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Cooperative_Address_Coop" Association="Self.FK_Cooperative_Address_Coop">
+            <End Role="Address_Coop" EntitySet="Address_Coop" />
+            <End Role="Cooperative" EntitySet="Cooperative" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cooperative_Admin_Cooperative" Association="Self.FK_Cooperative_Admin_Cooperative">
+            <End Role="Admin_Cooperative" EntitySet="Admin_Cooperative" />
+            <End Role="Cooperative" EntitySet="Cooperative" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Farmer_AddressFarmer" Association="Self.FK_Farmer_AddressFarmer">
+            <End Role="AddressFarmer" EntitySet="AddressFarmer" />
+            <End Role="Farmer" EntitySet="Farmer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Farmer_Cooperative" Association="Self.FK_Farmer_Cooperative">
+            <End Role="Cooperative" EntitySet="Cooperative" />
+            <End Role="Farmer" EntitySet="Farmer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_History_BuyerUser_History_Sell" Association="Self.FK_History_BuyerUser_History_Sell">
+            <End Role="History_Sell" EntitySet="History_Sell" />
+            <End Role="History_BuyerUser" EntitySet="History_BuyerUser" />
+          </AssociationSet>
+          <AssociationSet Name="FK_History_BuyerUser_User" Association="Self.FK_History_BuyerUser_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="History_BuyerUser" EntitySet="History_BuyerUser" />
+          </AssociationSet>
+          <AssociationSet Name="FK_History_Sell_Product_Rice" Association="Self.FK_History_Sell_Product_Rice">
+            <End Role="Product_Rice" EntitySet="Product_Rice" />
+            <End Role="History_Sell" EntitySet="History_Sell" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_Rice_Farmer" Association="Self.FK_Product_Rice_Farmer">
+            <End Role="Farmer" EntitySet="Farmer" />
+            <End Role="Product_Rice" EntitySet="Product_Rice" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RiceType_Product_Rice" Association="Self.FK_RiceType_Product_Rice">
+            <End Role="RiceType" EntitySet="RiceType" />
+            <End Role="Product_Rice" EntitySet="Product_Rice" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Model2" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Address_Coop">
+          <Key>
+            <PropertyRef Name="Coop_A_Sup" />
+            <PropertyRef Name="Coop_A_District" />
+          </Key>
+          <Property Name="Coop_A_Sup" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Coop_A_District" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Coop_A_Province" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Cooperatives" Relationship="Self.FK_Cooperative_Address_Coop" FromRole="Address_Coop" ToRole="Cooperative" />
+        </EntityType>
+        <EntityType Name="AddressFarmer">
+          <Key>
+            <PropertyRef Name="Farmer_A_Sup" />
+            <PropertyRef Name="Farmer_A_District" />
+          </Key>
+          <Property Name="Farmer_A_Sup" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Farmer_A_District" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Farmer_A_Province" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Farmers" Relationship="Self.FK_Farmer_AddressFarmer" FromRole="AddressFarmer" ToRole="Farmer" />
+        </EntityType>
+        <EntityType Name="Admin_Cooperative">
+          <Key>
+            <PropertyRef Name="AD_ID" />
+          </Key>
+          <Property Name="AD_ID" Type="String" MaxLength="18" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="AD_Password" Type="String" MaxLength="18" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="AD_Name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="AD_Lastname" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="AD_Tel" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Cooperatives" Relationship="Self.FK_Cooperative_Admin_Cooperative" FromRole="Admin_Cooperative" ToRole="Cooperative" />
+        </EntityType>
+        <EntityType Name="Cooperative">
+          <Key>
+            <PropertyRef Name="Coop_Name" />
+          </Key>
+          <Property Name="Coop_Name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Coop_Tel" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Coop_Latitude" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Coop_Longitude" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Coop_A_No" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Coop_A_Sup" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Coop_A_District" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="AD_ID" Type="String" MaxLength="18" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Address_Coop" Relationship="Self.FK_Cooperative_Address_Coop" FromRole="Cooperative" ToRole="Address_Coop" />
+          <NavigationProperty Name="Admin_Cooperative" Relationship="Self.FK_Cooperative_Admin_Cooperative" FromRole="Cooperative" ToRole="Admin_Cooperative" />
+          <NavigationProperty Name="Farmers" Relationship="Self.FK_Farmer_Cooperative" FromRole="Cooperative" ToRole="Farmer" />
+        </EntityType>
+        <EntityType Name="Farmer">
+          <Key>
+            <PropertyRef Name="Farmer_IDCard" />
+          </Key>
+          <Property Name="Farmer_IDCard" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Farmer_Name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Farmer_LastName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Farmer_Tel" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Farmer_A_No" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Farmer_A_Sup" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Farmer_A_District" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Coop_Name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="AddressFarmer" Relationship="Self.FK_Farmer_AddressFarmer" FromRole="Farmer" ToRole="AddressFarmer" />
+          <NavigationProperty Name="Cooperative" Relationship="Self.FK_Farmer_Cooperative" FromRole="Farmer" ToRole="Cooperative" />
+          <NavigationProperty Name="Product_Rice" Relationship="Self.FK_Product_Rice_Farmer" FromRole="Farmer" ToRole="Product_Rice" />
+        </EntityType>
+        <EntityType Name="History_Sell">
+          <Key>
+            <PropertyRef Name="Sell_NumID" />
+          </Key>
+          <Property Name="Sell_NumID" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Sell_Date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ProD_IDSell" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Product_Rice" Relationship="Self.FK_History_Sell_Product_Rice" FromRole="History_Sell" ToRole="Product_Rice" />
+          <NavigationProperty Name="Users" Relationship="Self.History_BuyerUser" FromRole="History_Sell" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Product_Rice">
+          <Key>
+            <PropertyRef Name="ProD_IDSell" />
+          </Key>
+          <Property Name="ProD_IDSell" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ProD_Pic" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ProD_Moisture" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ProD_Weight" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ProD_Price" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ProD_CertiWeightRice" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="RType_NID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Farmer_IDCard" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Farmer" Relationship="Self.FK_Product_Rice_Farmer" FromRole="Product_Rice" ToRole="Farmer" />
+          <NavigationProperty Name="History_Sell" Relationship="Self.FK_History_Sell_Product_Rice" FromRole="Product_Rice" ToRole="History_Sell" />
+          <NavigationProperty Name="RiceType" Relationship="Self.FK_RiceType_Product_Rice" FromRole="Product_Rice" ToRole="RiceType" />
+        </EntityType>
+        <EntityType Name="RiceType">
+          <Key>
+            <PropertyRef Name="RType_NID" />
+          </Key>
+          <Property Name="RType_NID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="RType_Name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="RType_Nape" Type="Boolean" />
+          <Property Name="RType_Napung" Type="Boolean" />
+          <NavigationProperty Name="Product_Rice" Relationship="Self.FK_RiceType_Product_Rice" FromRole="RiceType" ToRole="Product_Rice" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="U_IDCard" />
+          </Key>
+          <Property Name="U_IDCard" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="U_Password" Type="String" MaxLength="18" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="U_Name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="U_Lastname" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="U_Tel" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="History_Sell" Relationship="Self.History_BuyerUser" FromRole="User" ToRole="History_Sell" />
+        </EntityType>
+        <Association Name="FK_Cooperative_Address_Coop">
+          <End Role="Address_Coop" Type="Self.Address_Coop" Multiplicity="1" />
+          <End Role="Cooperative" Type="Self.Cooperative" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Address_Coop">
+              <PropertyRef Name="Coop_A_Sup" />
+              <PropertyRef Name="Coop_A_District" />
+            </Principal>
+            <Dependent Role="Cooperative">
+              <PropertyRef Name="Coop_A_Sup" />
+              <PropertyRef Name="Coop_A_District" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Farmer_AddressFarmer">
+          <End Role="AddressFarmer" Type="Self.AddressFarmer" Multiplicity="1" />
+          <End Role="Farmer" Type="Self.Farmer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AddressFarmer">
+              <PropertyRef Name="Farmer_A_Sup" />
+              <PropertyRef Name="Farmer_A_District" />
+            </Principal>
+            <Dependent Role="Farmer">
+              <PropertyRef Name="Farmer_A_Sup" />
+              <PropertyRef Name="Farmer_A_District" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cooperative_Admin_Cooperative">
+          <End Role="Admin_Cooperative" Type="Self.Admin_Cooperative" Multiplicity="1" />
+          <End Role="Cooperative" Type="Self.Cooperative" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Admin_Cooperative">
+              <PropertyRef Name="AD_ID" />
+            </Principal>
+            <Dependent Role="Cooperative">
+              <PropertyRef Name="AD_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Farmer_Cooperative">
+          <End Role="Cooperative" Type="Self.Cooperative" Multiplicity="1" />
+          <End Role="Farmer" Type="Self.Farmer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cooperative">
+              <PropertyRef Name="Coop_Name" />
+            </Principal>
+            <Dependent Role="Farmer">
+              <PropertyRef Name="Coop_Name" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_Rice_Farmer">
+          <End Role="Farmer" Type="Self.Farmer" Multiplicity="1" />
+          <End Role="Product_Rice" Type="Self.Product_Rice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Farmer">
+              <PropertyRef Name="Farmer_IDCard" />
+            </Principal>
+            <Dependent Role="Product_Rice">
+              <PropertyRef Name="Farmer_IDCard" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_History_Sell_Product_Rice">
+          <End Role="Product_Rice" Type="Self.Product_Rice" Multiplicity="1" />
+          <End Role="History_Sell" Type="Self.History_Sell" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product_Rice">
+              <PropertyRef Name="ProD_IDSell" />
+            </Principal>
+            <Dependent Role="History_Sell">
+              <PropertyRef Name="ProD_IDSell" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RiceType_Product_Rice">
+          <End Role="RiceType" Type="Self.RiceType" Multiplicity="1" />
+          <End Role="Product_Rice" Type="Self.Product_Rice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RiceType">
+              <PropertyRef Name="RType_NID" />
+            </Principal>
+            <Dependent Role="Product_Rice">
+              <PropertyRef Name="RType_NID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="History_BuyerUser">
+          <End Role="History_Sell" Type="Self.History_Sell" Multiplicity="*" />
+          <End Role="User" Type="Self.User" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="ShawnaThai_DB_Azure_V3Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Address_Coop" EntityType="Self.Address_Coop" />
+          <EntitySet Name="AddressFarmers" EntityType="Self.AddressFarmer" />
+          <EntitySet Name="Admin_Cooperative" EntityType="Self.Admin_Cooperative" />
+          <EntitySet Name="Cooperatives" EntityType="Self.Cooperative" />
+          <EntitySet Name="Farmers" EntityType="Self.Farmer" />
+          <EntitySet Name="History_Sell" EntityType="Self.History_Sell" />
+          <EntitySet Name="Product_Rice" EntityType="Self.Product_Rice" />
+          <EntitySet Name="RiceTypes" EntityType="Self.RiceType" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <AssociationSet Name="FK_Cooperative_Address_Coop" Association="Self.FK_Cooperative_Address_Coop">
+            <End Role="Address_Coop" EntitySet="Address_Coop" />
+            <End Role="Cooperative" EntitySet="Cooperatives" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Farmer_AddressFarmer" Association="Self.FK_Farmer_AddressFarmer">
+            <End Role="AddressFarmer" EntitySet="AddressFarmers" />
+            <End Role="Farmer" EntitySet="Farmers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cooperative_Admin_Cooperative" Association="Self.FK_Cooperative_Admin_Cooperative">
+            <End Role="Admin_Cooperative" EntitySet="Admin_Cooperative" />
+            <End Role="Cooperative" EntitySet="Cooperatives" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Farmer_Cooperative" Association="Self.FK_Farmer_Cooperative">
+            <End Role="Cooperative" EntitySet="Cooperatives" />
+            <End Role="Farmer" EntitySet="Farmers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_Rice_Farmer" Association="Self.FK_Product_Rice_Farmer">
+            <End Role="Farmer" EntitySet="Farmers" />
+            <End Role="Product_Rice" EntitySet="Product_Rice" />
+          </AssociationSet>
+          <AssociationSet Name="FK_History_Sell_Product_Rice" Association="Self.FK_History_Sell_Product_Rice">
+            <End Role="Product_Rice" EntitySet="Product_Rice" />
+            <End Role="History_Sell" EntitySet="History_Sell" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RiceType_Product_Rice" Association="Self.FK_RiceType_Product_Rice">
+            <End Role="RiceType" EntitySet="RiceTypes" />
+            <End Role="Product_Rice" EntitySet="Product_Rice" />
+          </AssociationSet>
+          <AssociationSet Name="History_BuyerUser" Association="Self.History_BuyerUser">
+            <End Role="History_Sell" EntitySet="History_Sell" />
+            <End Role="User" EntitySet="Users" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Model2StoreContainer" CdmEntityContainer="ShawnaThai_DB_Azure_V3Entities">
+          <EntitySetMapping Name="Address_Coop">
+            <EntityTypeMapping TypeName="Model2.Address_Coop">
+              <MappingFragment StoreEntitySet="Address_Coop">
+                <ScalarProperty Name="Coop_A_Sup" ColumnName="Coop_A_Sup" />
+                <ScalarProperty Name="Coop_A_District" ColumnName="Coop_A_District" />
+                <ScalarProperty Name="Coop_A_Province" ColumnName="Coop_A_Province" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AddressFarmers">
+            <EntityTypeMapping TypeName="Model2.AddressFarmer">
+              <MappingFragment StoreEntitySet="AddressFarmer">
+                <ScalarProperty Name="Farmer_A_Sup" ColumnName="Farmer_A_Sup" />
+                <ScalarProperty Name="Farmer_A_District" ColumnName="Farmer_A_District" />
+                <ScalarProperty Name="Farmer_A_Province" ColumnName="Farmer_A_Province" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Admin_Cooperative">
+            <EntityTypeMapping TypeName="Model2.Admin_Cooperative">
+              <MappingFragment StoreEntitySet="Admin_Cooperative">
+                <ScalarProperty Name="AD_ID" ColumnName="AD_ID" />
+                <ScalarProperty Name="AD_Password" ColumnName="AD_Password" />
+                <ScalarProperty Name="AD_Name" ColumnName="AD_Name" />
+                <ScalarProperty Name="AD_Lastname" ColumnName="AD_Lastname" />
+                <ScalarProperty Name="AD_Tel" ColumnName="AD_Tel" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cooperatives">
+            <EntityTypeMapping TypeName="Model2.Cooperative">
+              <MappingFragment StoreEntitySet="Cooperative">
+                <ScalarProperty Name="Coop_Name" ColumnName="Coop_Name" />
+                <ScalarProperty Name="Coop_Tel" ColumnName="Coop_Tel" />
+                <ScalarProperty Name="Coop_Latitude" ColumnName="Coop_Latitude" />
+                <ScalarProperty Name="Coop_Longitude" ColumnName="Coop_Longitude" />
+                <ScalarProperty Name="Coop_A_No" ColumnName="Coop_A_No" />
+                <ScalarProperty Name="Coop_A_Sup" ColumnName="Coop_A_Sup" />
+                <ScalarProperty Name="Coop_A_District" ColumnName="Coop_A_District" />
+                <ScalarProperty Name="AD_ID" ColumnName="AD_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Farmers">
+            <EntityTypeMapping TypeName="Model2.Farmer">
+              <MappingFragment StoreEntitySet="Farmer">
+                <ScalarProperty Name="Farmer_IDCard" ColumnName="Farmer_IDCard" />
+                <ScalarProperty Name="Farmer_Name" ColumnName="Farmer_Name" />
+                <ScalarProperty Name="Farmer_LastName" ColumnName="Farmer_LastName" />
+                <ScalarProperty Name="Farmer_Tel" ColumnName="Farmer_Tel" />
+                <ScalarProperty Name="Farmer_A_No" ColumnName="Farmer_A_No" />
+                <ScalarProperty Name="Farmer_A_Sup" ColumnName="Farmer_A_Sup" />
+                <ScalarProperty Name="Farmer_A_District" ColumnName="Farmer_A_District" />
+                <ScalarProperty Name="Coop_Name" ColumnName="Coop_Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="History_Sell">
+            <EntityTypeMapping TypeName="Model2.History_Sell">
+              <MappingFragment StoreEntitySet="History_Sell">
+                <ScalarProperty Name="Sell_NumID" ColumnName="Sell_NumID" />
+                <ScalarProperty Name="Sell_Date" ColumnName="Sell_Date" />
+                <ScalarProperty Name="ProD_IDSell" ColumnName="ProD_IDSell" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Product_Rice">
+            <EntityTypeMapping TypeName="Model2.Product_Rice">
+              <MappingFragment StoreEntitySet="Product_Rice">
+                <ScalarProperty Name="ProD_IDSell" ColumnName="ProD_IDSell" />
+                <ScalarProperty Name="ProD_Pic" ColumnName="ProD_Pic" />
+                <ScalarProperty Name="ProD_Moisture" ColumnName="ProD_Moisture" />
+                <ScalarProperty Name="ProD_Weight" ColumnName="ProD_Weight" />
+                <ScalarProperty Name="ProD_Price" ColumnName="ProD_Price" />
+                <ScalarProperty Name="ProD_CertiWeightRice" ColumnName="ProD_CertiWeightRice" />
+                <ScalarProperty Name="RType_NID" ColumnName="RType_NID" />
+                <ScalarProperty Name="Farmer_IDCard" ColumnName="Farmer_IDCard" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RiceTypes">
+            <EntityTypeMapping TypeName="Model2.RiceType">
+              <MappingFragment StoreEntitySet="RiceType">
+                <ScalarProperty Name="RType_NID" ColumnName="RType_NID" />
+                <ScalarProperty Name="RType_Name" ColumnName="RType_Name" />
+                <ScalarProperty Name="RType_Nape" ColumnName="RType_Nape" />
+                <ScalarProperty Name="RType_Napung" ColumnName="RType_Napung" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="Model2.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="Model2.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="U_IDCard" ColumnName="U_IDCard" />
+                <ScalarProperty Name="U_Password" ColumnName="U_Password" />
+                <ScalarProperty Name="U_Name" ColumnName="U_Name" />
+                <ScalarProperty Name="U_Lastname" ColumnName="U_Lastname" />
+                <ScalarProperty Name="U_Tel" ColumnName="U_Tel" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="History_BuyerUser" TypeName="Model2.History_BuyerUser" StoreEntitySet="History_BuyerUser">
+            <EndProperty Name="History_Sell">
+              <ScalarProperty Name="Sell_NumID" ColumnName="Sell_NumID" />
+            </EndProperty>
+            <EndProperty Name="User">
+              <ScalarProperty Name="U_IDCard" ColumnName="U_IDCard" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

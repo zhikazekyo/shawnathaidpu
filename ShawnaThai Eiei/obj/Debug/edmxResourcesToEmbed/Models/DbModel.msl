@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ชาวนาไทยfookModelStoreContainer" CdmEntityContainer="DbModels">
+    <EntitySetMapping Name="Address_Coop">
+      <EntityTypeMapping TypeName="ชาวนาไทยfookModel.Address_Coop">
+        <MappingFragment StoreEntitySet="Address_Coop">
+          <ScalarProperty Name="Coop_A_Sup" ColumnName="Coop_A_Sup" />
+          <ScalarProperty Name="Coop_A_District" ColumnName="Coop_A_District" />
+          <ScalarProperty Name="Coop_A_Province" ColumnName="Coop_A_Province" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AddressFarmers">
+      <EntityTypeMapping TypeName="ชาวนาไทยfookModel.AddressFarmer">
+        <MappingFragment StoreEntitySet="AddressFarmer">
+          <ScalarProperty Name="Farmer_A_Sup" ColumnName="Farmer_A_Sup" />
+          <ScalarProperty Name="Farmer_A_District" ColumnName="Farmer_A_District" />
+          <ScalarProperty Name="Farmer_A_Province" ColumnName="Farmer_A_Province" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Admin_Cooperative">
+      <EntityTypeMapping TypeName="ชาวนาไทยfookModel.Admin_Cooperative">
+        <MappingFragment StoreEntitySet="Admin_Cooperative">
+          <ScalarProperty Name="AD_ID" ColumnName="AD_ID" />
+          <ScalarProperty Name="AD_Password" ColumnName="AD_Password" />
+          <ScalarProperty Name="AD_Name" ColumnName="AD_Name" />
+          <ScalarProperty Name="AD_Lastname" ColumnName="AD_Lastname" />
+          <ScalarProperty Name="AD_Tel" ColumnName="AD_Tel" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cooperatives">
+      <EntityTypeMapping TypeName="ชาวนาไทยfookModel.Cooperative">
+        <MappingFragment StoreEntitySet="Cooperative">
+          <ScalarProperty Name="Coop_Name" ColumnName="Coop_Name" />
+          <ScalarProperty Name="Coop_Latitude" ColumnName="Coop_Latitude" />
+          <ScalarProperty Name="Coop_Longtitude" ColumnName="Coop_Longtitude" />
+          <ScalarProperty Name="Coop_Tel" ColumnName="Coop_Tel" />
+          <ScalarProperty Name="Coop_A_No" ColumnName="Coop_A_No" />
+          <ScalarProperty Name="Coop_A_Sup" ColumnName="Coop_A_Sup" />
+          <ScalarProperty Name="Coop_A_District" ColumnName="Coop_A_District" />
+          <ScalarProperty Name="AD_ID" ColumnName="AD_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Farmers">
+      <EntityTypeMapping TypeName="ชาวนาไทยfookModel.Farmer">
+        <MappingFragment StoreEntitySet="Farmer">
+          <ScalarProperty Name="Farmer_IDCard" ColumnName="Farmer_IDCard" />
+          <ScalarProperty Name="Farmer_Name" ColumnName="Farmer_Name" />
+          <ScalarProperty Name="Farmer_Lastname" ColumnName="Farmer_Lastname" />
+          <ScalarProperty Name="Farmer_Tel" ColumnName="Farmer_Tel" />
+          <ScalarProperty Name="Farmer_A_No" ColumnName="Farmer_A_No" />
+          <ScalarProperty Name="Farmer_A_Sup" ColumnName="Farmer_A_Sup" />
+          <ScalarProperty Name="Farmer_A_District" ColumnName="Farmer_A_District" />
+          <ScalarProperty Name="Coop_Name" ColumnName="Coop_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="History_Sell">
+      <EntityTypeMapping TypeName="ชาวนาไทยfookModel.History_Sell">
+        <MappingFragment StoreEntitySet="History_Sell">
+          <ScalarProperty Name="Sell_NumID" ColumnName="Sell_NumID" />
+          <ScalarProperty Name="Sell_Date" ColumnName="Sell_Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Product_Rice">
+      <EntityTypeMapping TypeName="ชาวนาไทยfookModel.Product_Rice">
+        <MappingFragment StoreEntitySet="Product_Rice">
+          <ScalarProperty Name="ProD_SellID" ColumnName="ProD_SellID" />
+          <ScalarProperty Name="ProD_Pic" ColumnName="ProD_Pic" />
+          <ScalarProperty Name="ProD_Moisture" ColumnName="ProD_Moisture" />
+          <ScalarProperty Name="ProD_Weight" ColumnName="ProD_Weight" />
+          <ScalarProperty Name="ProD_Price" ColumnName="ProD_Price" />
+          <ScalarProperty Name="ProD_CertiWeight" ColumnName="ProD_CertiWeight" />
+          <ScalarProperty Name="RType_NID" ColumnName="RType_NID" />
+          <ScalarProperty Name="Sell_NumID" ColumnName="Sell_NumID" />
+          <ScalarProperty Name="Farmer_IDCard" ColumnName="Farmer_IDCard" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RiceTypes">
+      <EntityTypeMapping TypeName="ชาวนาไทยfookModel.RiceType">
+        <MappingFragment StoreEntitySet="RiceType">
+          <ScalarProperty Name="RType_NID" ColumnName="RType_NID" />
+          <ScalarProperty Name="RType_Name" ColumnName="RType_Name" />
+          <ScalarProperty Name="RType_Napee" ColumnName="RType_Napee" />
+          <ScalarProperty Name="RType_Napung" ColumnName="RType_Napung" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="ชาวนาไทยfookModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="ชาวนาไทยfookModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="U_IDCard" ColumnName="U_IDCard" />
+          <ScalarProperty Name="U_Password" ColumnName="U_Password" />
+          <ScalarProperty Name="U_Name" ColumnName="U_Name" />
+          <ScalarProperty Name="U_LastName" ColumnName="U_LastName" />
+          <ScalarProperty Name="U_Tel" ColumnName="U_Tel" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="History_BuyerUser" TypeName="ชาวนาไทยfookModel.History_BuyerUser" StoreEntitySet="History_BuyerUser">
+      <EndProperty Name="History_Sell">
+        <ScalarProperty Name="Sell_NumID" ColumnName="Sell_NumID" />
+      </EndProperty>
+      <EndProperty Name="User">
+        <ScalarProperty Name="U_IDCard" ColumnName="U_IDCard" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

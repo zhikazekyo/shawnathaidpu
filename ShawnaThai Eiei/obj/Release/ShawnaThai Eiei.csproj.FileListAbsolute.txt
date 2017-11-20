@@ -1,0 +1,22 @@
+C:\Users\TatchapongSukgorn\source\repos\ShawnaThai Eiei\ShawnaThai Eiei\bin\ShawnaThai Eiei.dll.config
+C:\Users\TatchapongSukgorn\source\repos\ShawnaThai Eiei\ShawnaThai Eiei\bin\ShawnaThai Eiei.dll
+C:\Users\TatchapongSukgorn\source\repos\ShawnaThai Eiei\ShawnaThai Eiei\bin\ShawnaThai Eiei.pdb
+C:\Users\TatchapongSukgorn\source\repos\ShawnaThai Eiei\ShawnaThai Eiei\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\TatchapongSukgorn\source\repos\ShawnaThai Eiei\ShawnaThai Eiei\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\TatchapongSukgorn\source\repos\ShawnaThai Eiei\ShawnaThai Eiei\bin\System.Web.Helpers.dll
+C:\Users\TatchapongSukgorn\source\repos\ShawnaThai Eiei\ShawnaThai Eiei\bin\System.Web.Mvc.dll
+C:\Users\TatchapongSukgorn\source\repos\ShawnaThai Eiei\ShawnaThai Eiei\bin\System.Web.Razor.dll
+C:\Users\TatchapongSukgorn\source\repos\ShawnaThai Eiei\ShawnaThai Eiei\bin\System.Web.Webpages.Deployment.dll
+C:\Users\TatchapongSukgorn\source\repos\ShawnaThai Eiei\ShawnaThai Eiei\bin\System.Web.Webpages.dll
+C:\Users\TatchapongSukgorn\source\repos\ShawnaThai Eiei\ShawnaThai Eiei\bin\System.Web.Webpages.Razor.dll
+C:\Users\TatchapongSukgorn\source\repos\ShawnaThai Eiei\ShawnaThai Eiei\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\TatchapongSukgorn\source\repos\ShawnaThai Eiei\ShawnaThai Eiei\bin\System.Web.Razor.xml
+C:\Users\TatchapongSukgorn\source\repos\ShawnaThai Eiei\ShawnaThai Eiei\bin\System.Web.Webpages.xml
+C:\Users\TatchapongSukgorn\source\repos\ShawnaThai Eiei\ShawnaThai Eiei\bin\System.Web.Webpages.Deployment.xml
+C:\Users\TatchapongSukgorn\source\repos\ShawnaThai Eiei\ShawnaThai Eiei\bin\System.Web.Webpages.Razor.xml
+C:\Users\TatchapongSukgorn\source\repos\ShawnaThai Eiei\ShawnaThai Eiei\bin\System.Web.Helpers.xml
+C:\Users\TatchapongSukgorn\source\repos\ShawnaThai Eiei\ShawnaThai Eiei\bin\System.Web.Mvc.xml
+C:\Users\TatchapongSukgorn\source\repos\ShawnaThai Eiei\ShawnaThai Eiei\obj\Release\ShawnaThai Eiei.csprojResolveAssemblyReference.cache
+C:\Users\TatchapongSukgorn\source\repos\ShawnaThai Eiei\ShawnaThai Eiei\obj\Release\ShawnaThai Eiei.csproj.CoreCompileInputs.cache
+C:\Users\TatchapongSukgorn\source\repos\ShawnaThai Eiei\ShawnaThai Eiei\obj\Release\ShawnaThai Eiei.dll
+C:\Users\TatchapongSukgorn\source\repos\ShawnaThai Eiei\ShawnaThai Eiei\obj\Release\ShawnaThai Eiei.pdb

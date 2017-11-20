@@ -1,0 +1,70 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+
+<body id="page-top">
+  @using (Html.BeginForm())
+  {
+    <!-- Header -->
+    @Html.AntiForgeryToken()
+    <!-- Header -->
+    <header class="masthead">
+        .<div class="container">
+            .   <div class="intro-text">
+                <div class="intro-lead-in">ยินดีต้อนรับ ชาวนาไทย</div>
+                <div class="intro-heading">Login</div>
+                <center>
+
+                    <form id="contactForm" name="sentMessage" novalidate>
+
+                        <div class="form-group">
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="Your Username * " type="text" name="username" id="username" required="required">
+                                </div>
+
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="Your Password *" type="password" pattern="[a-zA-Z0-9]+" minlength="6" maxlength="18"  name="password" id="password" required="required">
+
+                                </div>
+
+
+                                <div class="clearfix"></div>
+                                <div class="col-lg-12 text-center">
+                                    <div id="success"></div>
+
+                                    <input class="btn btn-xl" type="submit" value="เข้าสู่ระบบ" />
+                                    <a class="btn btn-xl" type="submit" href="/Register/Register">ลงทะเบียน</a>
+                                    <font size="5" color="red">@ViewBag.Message</font>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </center>
+            </div>
+        </div>
+    </header>
+
+    <script src="~/Scripts/jquery-3.2.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="~/Bootstrap/vendor/jquery/jquery.min.js"></script>
+    <script src="~/Bootstrap/vendor/popper/popper.min.js"></script>
+    <script src="~/Bootstrap/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/pdfobject.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="~/Bootstrap/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Contact form JavaScript -->
+    <script src="~/Bootstrap/js/jqBootstrapValidation.js"></script>
+    <script src="~/Bootstrap/js/contact_me.js"></script>
+    <!-- Custom scripts for this template -->
+    <script src="~/Bootstrap/js/agency.min.js"></script>
+    }
+</body>
+</html>
+

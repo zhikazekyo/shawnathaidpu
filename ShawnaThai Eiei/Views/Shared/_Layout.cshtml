@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>ชาวนาไทย เว็บตลาดข้าวออนไลน์</title>
+    <!-- Bootstrap core CSS -->
+    <link href="~/Bootstrap/vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <!-- Custom fonts for this template -->
+    <link href="~/Bootstrap/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+    <!-- Custom styles for this template -->
+    <link href="~/Bootstrap/css/agency.min.css" rel="stylesheet">
+
+    <style type="text/css">
+
+        .msg_show {
+            position: fixed;
+            z-index: 90000;
+            margin: auto;
+            width: 500px;
+            height: 150px;
+            top: 50%;
+            left: 50%;
+            margin-top: -100px;
+            margin-left: -250px;
+            border-radius: 36px 36px 36px 36px;
+            -moz-border-radius: 36px 36px 36px 36px;
+            -webkit-border-radius: 36px 36px 36px 36px;
+            border: 0px solid #000000;
+            background-color: #FF3366;
+            text-align: center;
+            display: none;
+        }
+    </style>
+
+</head>
+<body id="page-top">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav" style="background:#000000;>
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="#page-top"><font color=#FFFFFF>ชาวนาไทย</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fa fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="/Index/Index">หน้าหลัก</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="/User/Sellingz">รายการขายข้าว</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="/User/GoogleMap">แผนที่ของสหกรณ์</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="/Login/Login">เข้าสู่ระบบ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="/Register/Register">ลงทะเบียน</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+        @RenderBody()
+        <hr />
+
+    <script src="~/Scripts/jquery-3.2.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="~/Bootstrap/vendor/jquery/jquery.min.js"></script>
+    <script src="~/Bootstrap/vendor/popper/popper.min.js"></script>
+    <script src="~/Bootstrap/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/pdfobject.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="~/Bootstrap/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Contact form JavaScript -->
+    <script src="~/Bootstrap/js/jqBootstrapValidation.js"></script>
+    <script src="~/Bootstrap/js/contact_me.js"></script>
+    <!-- Custom scripts for this template -->
+    <script src="~/Bootstrap/js/agency.min.js"></script>
+</body>
+</html>

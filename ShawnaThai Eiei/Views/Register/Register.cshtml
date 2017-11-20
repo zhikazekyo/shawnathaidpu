@@ -1,0 +1,76 @@
+﻿@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+<!DOCTYPE html>
+<html lang="en">
+<body id="page-top">
+    <!-- Header -->
+    <header class="masthead">
+        <div class="intro-text">
+
+            <div class="intro-heading">ลงทะเบียน</div>
+            <center>
+
+                <form id="contactForm" name="sentMessage" novalidate>
+
+                    <div class="form-group">
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input class="form-control" id="U_IDCard" type="text" name="U_IDCard" pattern="[0-9]+" minlength="13" maxlength="13" placeholder="เลขบัตรประชาชน*" required="required">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" id="U_Password" name="U_Password" type="password" pattern="[a-zA-Z0-9]+" minlength="6" maxlength="18" placeholder="รหัสผ่าน*" required ="required" onchange= "this.setCustomValidity(this.validity.patternMismatch ? 'Must have at least 6 characters' : ''); if(this.checkValidity()) form.Password.Pattern = this.value;">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" id="U_Password2" name="U_Password2" type="password" pattern="[a-zA-Z0-9]+" minlength="6" maxlength="18" placeholder="รหัสผ่านอีกครั้ง*" required ="required" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Please enter the same Password as above' : '');">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" id="U_Name" type="text" name ="U_Name" placeholder="ชื่อ *" minlength="4" maxlength="30" required ="required">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" id="U_Lastname" type="text" name="U_Lastname" placeholder="นามสกุล *" minlength="4" maxlength="30" required ="required">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" id="U_Tel" type="tel" name="U_Tel" placeholder="โทรศัพท์ *" pattern="[0-9]+" minlength="9" maxlength="10" required ="required">
+                                <p class="help-block text-danger"></p>
+                            </div>
+
+                            <div class="clearfix"></div>
+                            <div class="col-lg-12 text-center">
+                                <div id="success"></div>
+                                <button id="sendMessageButton" class="btn btn-xl" type="submit">ลงทะเบียน</button>
+                                <font size="5" color="red">@ViewBag.Message</font>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </center>
+        </div>
+    </header>
+
+    <script src="~/Scripts/jquery-3.2.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="~/Bootstrap/vendor/jquery/jquery.min.js"></script>
+    <script src="~/Bootstrap/vendor/popper/popper.min.js"></script>
+    <script src="~/Bootstrap/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/pdfobject.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="~/Bootstrap/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Contact form JavaScript -->
+    <script src="~/Bootstrap/js/jqBootstrapValidation.js"></script>
+    <script src="~/Bootstrap/js/contact_me.js"></script>
+    <!-- Custom scripts for this template -->
+    <script src="~/Bootstrap/js/agency.min.js"></script>
+</body>
+</html>
+}
+

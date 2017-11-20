@@ -1,0 +1,82 @@
+﻿@model ShawnaThai_Eiei.Models.Admin_Cooperative
+@using System.Globalization;
+@{
+    ViewBag.Title = "ShowAdmin";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style type="text/css">
+        .form-group {
+            height: 50px
+        }
+
+        .masthead {
+            height: 980px
+        }
+    </style>
+</head>
+
+<body id="page-top">
+    <header class="masthead">
+        <br><br>
+        <div class="container">
+            <div class="col-md-12">
+                <br><br><br><br>
+                <div class="form-group">
+                    <div class="col-md-4" style="text-align:left; position:relative;right:-280px;">
+                        <label style="color:gold;font-size:24px;">ชื่อผู้ใช้ : </label>
+                    </div>
+                    <div class="col-md-8" style="text-align:left; position:relative;right:-450px; top:-40px">
+                        <input class="form-control" style="width:300px" type="text" value="@Model.AD_ID" readonly>
+                        <br />
+                    </div>
+                    <p class="help-block text-danger"></p>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-4" style="text-align:left; position:relative;right:-280px;">
+                        <label style="color:gold;font-size:24px;">ชื่อ : </label>
+                    </div>
+                    <div class="col-md-8" style="text-align:left; position:relative;right:-450px; top:-40px">
+                        <input class="form-control" style="width:300px" type="text" value="@Model.AD_Name" readonly>
+                        <br />
+                    </div>
+                    <p class="help-block text-danger"></p>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-4" style="text-align:left; position:relative;right:-300px;">
+                        <label style="color:gold;font-size:24px;">นามสกุล : </label>
+                    </div>
+                    <div class="col-md-8" style="text-align:left; position:relative;right:-450px; top:-40px">
+                        <input class="form-control" style="width:300px" type="text" value="@Model.AD_Lastname" readonly>
+                        <br />
+                    </div>
+                    <p class="help-block text-danger"></p>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-4" style="text-align:left; position:relative;right:-280px;">
+                        <label style="color:gold;font-size:24px;">เบอร์โทรศัพท์ : </label>
+                    </div>
+                    <div class="col-md-8" style="text-align:left; position:relative;right:-450px; top:-40px">
+                        <input class="form-control" style="width:300px" type="text" value="@Model.AD_Tel" readonly>
+                        <br />
+                    </div>
+                    <p class="help-block text-danger"></p>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-4">
+                    </div>
+                    <div class="col-md-8" style="position:relative;right:-180px">
+                        <input class="btn btn-xl" type="submit" value="แก้ไขข้อมูล" onclick="location.href='@Url.Action("EditAdmin", "ProfileAdmin")';" />
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+</body>
+</html>

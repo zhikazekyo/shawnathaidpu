@@ -1,0 +1,98 @@
+﻿
+@{
+    ViewBag.Title = "popuptest";
+}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <style type="text/css">
+        html {
+            height: 100%;
+        }
+
+        body {
+            background: #FF3366;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        #overlay {
+            background: #000;
+            width: 100%;
+            height: 100%;
+            z-index: 80000;
+            top: 0px;
+            left: 0px;
+            position: fixed;
+            opacity: .5;
+            filter: alpha(opacity=50);
+            -moz-opacity: .5;
+            display: none;
+        }
+
+        .msg_show {
+            position: fixed;
+            z-index: 90000;
+            margin: auto;
+            width: 500px;
+            height: 150px;
+            top: 50%;
+            left: 50%;
+            margin-top: -100px;
+            margin-left: -250px;
+            border-radius: 36px 36px 36px 36px;
+            -moz-border-radius: 36px 36px 36px 36px;
+            -webkit-border-radius: 36px 36px 36px 36px;
+            border: 0px solid #000000;
+            background-color: #9C9;
+            text-align: center;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="margin:auto;width:1000px;">
+        <br><br/>
+        <br><br />
+        <br><br />
+        <br><br />
+        <br><br />
+        <a class="show_box" href="javascript:void(0);">show</a>
+        <!--เนื้อหาภายในเว็บ-->  <br />
+    </div>
+    <script src="~/Scripts/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $(".show_box").click(function () {
+                $("#overlay").fadeToggle("", function () { // แสดงส่วนของ overlay
+                    $(".msg_show").slideToggle("", function () { // แสดงส่วนของ เนื้อหา popup
+                        if ($(this).css("display") == "block") {        // ถ้าเป็นกรณีแสดงข้อมูล
+                            //  หากต้องการดึงข้อมูลมาแสดง แบบ ajax
+                            //  สามารถดัดแปลงจากโค้ดนี้ได้
+                            //  $(".msg_data").load("data.php");
+                            //      หรือ
+                            //  $.post("data.php",{},function(data){
+                            //      $(".msg_data").html(data);
+                            //  });
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+    <div class="msg_show">
+        <a class="show_box" href="javascript:void(0);">Close</a>
+        <div class="msg_data">
+            ราคาข้าววันนี้
+        </div>
+    </div>
+    <div id="overlay"></div>
+</body>
+</html>
