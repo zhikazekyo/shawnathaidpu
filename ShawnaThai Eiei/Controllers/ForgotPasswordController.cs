@@ -25,46 +25,61 @@ namespace ShawnaThai_Eiei.Controllers
 
         public ActionResult ForgotAdminID()
         {
-            string User_Email = Request.Form["User_Email"];
+            string AD_Email = Request.Form["AD_Email"];
             string ID = Request.Form["AD_ID"];
             string AD_Tel = Request.Form["AD_Tel"];
             var check = db.Admin_Cooperative.Where(b => b.AD_ID.Equals(ID)).FirstOrDefault<Admin_Cooperative>();
-            var check2 = db.Admin_Cooperative.Where(z => z.AD_Tel.Equals(AD_Tel)).FirstOrDefault<Admin_Cooperative>();
-            if (check != null && check2 != null)
+            
+            if (check != null )
             {
-                var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-                var stringChars = new char[8];
-                var random = new Random();
+                var check2 = db.Admin_Cooperative.Where(z => check.AD_Tel.Equals(AD_Tel)).FirstOrDefault<Admin_Cooperative>();
 
-                for (int i = 0; i < stringChars.Length; i++)
+
+                if (check2 != null)
                 {
-                    stringChars[i] = chars[random.Next(chars.Length)];
-                }
+                    var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+                    var stringChars = new char[8];
+                    var random = new Random();
 
-                var finalString = new String(stringChars);
-                check.AD_Password = finalString;
-                db.SaveChanges();
-                using (MailMessage mm = new MailMessage("shawnathaidpu@gmail.com", check.AD_ID))
-                {
-                    mm.Subject = "Reset Password";
-
-                    mm.Body = "รหัสผ่านใหม่ของคุณคือ : " + check.AD_Password;
-
-
-                    mm.IsBodyHtml = false;
-                    using (SmtpClient smtp = new SmtpClient())
+                    for (int i = 0; i < stringChars.Length; i++)
                     {
-                        smtp.Host = "smtp.gmail.com";
-                        smtp.EnableSsl = true;
-                        NetworkCredential NetworkCred = new NetworkCredential("shawnathaidpu@gmail.com", "Gear2404");
-                        smtp.UseDefaultCredentials = true;
-                        smtp.Credentials = NetworkCred;
-                        smtp.Port = 587;
-                        smtp.Send(mm);
-
+                        stringChars[i] = chars[random.Next(chars.Length)];
                     }
+
+                    var finalString = new String(stringChars);
+                    check.AD_Password = finalString;
+                    db.SaveChanges();
+                    using (MailMessage mm = new MailMessage("shawnathaidpu@gmail.com", AD_Email))
+                    {
+                        mm.Subject = "Reset Password";
+
+                        mm.Body = "รหัสผ่านใหม่ของคุณคือ : " + check.AD_Password;
+
+
+                        mm.IsBodyHtml = false;
+                        using (SmtpClient smtp = new SmtpClient())
+                        {
+                            smtp.Host = "smtp.gmail.com";
+                            smtp.EnableSsl = true;
+                            NetworkCredential NetworkCred = new NetworkCredential("shawnathaidpu@gmail.com", "Gear2404");
+                            smtp.UseDefaultCredentials = true;
+                            smtp.Credentials = NetworkCred;
+                            smtp.Port = 587;
+                            smtp.Send(mm);
+
+                        }
+                    }
+                    ViewBag.ok = "OK";
                 }
-                return RedirectToAction("NextStep", "Forgetpassword");
+                else
+                {
+                    ViewBag.Error1 = "เบอร์โทรศัพท์ไม่ตรงกับ เลขบัตรที่สมัครไว้";
+                }
+
+            }
+            else
+            {
+                ViewBag.Error1 = "เลขบัตรประชาชนไม่ถูกต้อง";
             }
 
             return View();
@@ -92,7 +107,7 @@ namespace ShawnaThai_Eiei.Controllers
                 var finalString = new String(stringChars);
                 check.U_Password = finalString;
                 db.SaveChanges();
-                using (MailMessage MailMess = new MailMessage("shawnathaidpu@gmail.com", check.U_IDCard))
+                using (MailMessage MailMess = new MailMessage("shawnathaidpu@gmail.com", User_Email))
                 {
                     MailMess.Subject = "Reset Password";
 

@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "SelectForgot";
+}
+
+<html lang="en">
+<head>
+    <style type="text/css">
+        .masthead {
+            height: 980px
+        }
+    </style>
+</head>
+
+<body id="page-top">
+        <header class="masthead">
+            <div class="container">
+                <div class="intro-text">
+                    <div class="intro-heading" style="font-size:50px;position:relative;top:-160px;">เลือกระดับผู้ใช้ของคุณ เพื่อรีเซ็ตรหัสผ่าน</div>
+                    <div class="col-md-12">
+                        <br><br><br><br>
+                        <div class="form-group">
+                            <img src="~/Icon/icons-390z.png" style="position:relative;top:-200px;right:50px;" onclick="location.href='@Url.Action("ForgotUserID", "ForgotPassword")';"  >
+                             <img src="~/Icon/icons-390.png" style="position:relative;top:-200px;right:-50px;" onclick="location.href='@Url.Action("ForgotAdminID", "ForgotPassword")';">
+                            <div class="col-md-4" style="text-align:left; position:relative;right:-268px;top:-180px">
+                                <label style="color:gold;font-size:70px;">ผู้ใช้</label>
+                            </div>
+                            <div class="col-md-4" style="text-align:left; position:relative;right:-630px; top:-295px">
+                                <label style="color:gold;font-size:70px;">แอดมิน</label>
+                            </div>
+                            </div>
+                    </div>
+                </div>
+                <hr/>
+            </div>
+        </header>
+    </body>
+</html>
+
+
+

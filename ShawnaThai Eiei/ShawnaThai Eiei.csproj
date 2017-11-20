@@ -188,6 +188,8 @@
     <Content Include="File\download.png" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Icon\icons-390.png" />
+    <Content Include="Icon\icons-390z.png" />
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
@@ -407,6 +409,7 @@
     <Content Include="Views\ProfileAdmin\ChangePassAdmin.cshtml" />
     <Content Include="Views\ForgotPassword\ForgotUserID.cshtml" />
     <Content Include="Views\ForgotPassword\ForgotAdminID.cshtml" />
+    <Content Include="Views\ForgotPassword\SelectForgot.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

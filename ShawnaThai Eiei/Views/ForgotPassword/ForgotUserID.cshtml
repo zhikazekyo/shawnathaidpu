@@ -3,5 +3,79 @@
     ViewBag.Title = "ForgotUserID";
 }
 
-<h2>ForgotUserID</h2>
+<html lang="en">
+<head>
+    <style type="text/css">
+        .masthead {
+            height: 980px
+        }
+    </style>
+</head>
 
+<@using (Html.BeginForm())
+{
+    <body id="page-top">
+        <header class="masthead">
+            <div class="container">
+                <div class="intro-text">
+                    <div class="intro-heading" style="font-size:50px;position:relative;top:-160px;">กรอกข้อมูลเพื่อ รีเซ็ตรหัสผ่าน</div>
+                        <div class="col-md-12">
+                        <br><br><br><br>
+
+                            <div class="form-group">
+                                <div class="col-md-4" style="text-align:left; position:relative;right:-285px;">
+                                    <label style="color:gold;font-size:24px;">อีเมล์ : </label>
+                                </div>
+                                <div class="col-md-8" style="text-align:left; position:relative;right:-450px; top:-40px">
+                                    <input id="User_Email" name="User_Email" class="form-control" style="width:300px" type="text"  maxlength="50" title="ใส่อีเมล์ที่ต้องการจะส่ง">
+                                    <br />
+                                </div>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-4" style="text-align:left; position:relative;right:-285px;">
+                                    <label style="color:gold;font-size:24px;">เลขบัตรประชาชน : </label>
+                                </div>
+                                <div class="col-md-8" style="text-align:left; position:relative;right:-450px; top:-40px">
+                                    <input id="IDCard" name="IDCard" class="form-control" style="width:300px" pattern="[0-9]+" type="text" minlength="13" maxlength="13" title="ใส่เลขบัตรประชาชน">
+                                    <p style="color:red ; font-weight:bold">@ViewBag.Error1</p>
+                                    <br />
+                                </div>
+                                <p class="help-block text-danger"></p>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-4" style="text-align:left; position:relative;right:-285px;">
+                                    <label style="color:gold;font-size:24px;">เบอร์โทรศัพท์ : </label>
+                                </div>
+                                <div class="col-md-8" style="text-align:left; position:relative;right:-450px; top:-40px">
+                                    <input id="User_Tel" name="User_Tel" class="form-control" style="width:300px" pattern="[0-9]+" type="text" maxlength="10" title="ใส่เบอร์โทรศัพท์">
+                                    <p style="color:red ; font-weight:bold">@ViewBag.Error2</p>
+                                    <br />
+                                </div>
+                                <p class="help-block text-danger"></p>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-8" style="position:relative;right:-180px">
+                                    <input class="btn btn-xl" type="submit" value="รีเซ็ตรหัสผ่าน" onclick="myFunction()" />
+                                    <input class="btn btn-xl" type="submit" value="ย้อนกลับ" onclick="location.href='@Url.Action("SelectForgot", "ForgotPassword")';" />
+                                </div>
+                            </div>
+
+                            @if (ViewBag.ok != null)
+                            {
+
+                                <script>
+                                    alert("รหัสผ่านใหม่จะถูกส่งไปยังอีเมล์ของท่าน");
+                                </script>
+
+                            }
+                         </div>
+                </div>
+                <hr/>
+            </div>
+        </header>
+    </body>
+}
+</html>
