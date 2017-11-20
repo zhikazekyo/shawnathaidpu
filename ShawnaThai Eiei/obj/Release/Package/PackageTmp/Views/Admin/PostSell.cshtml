@@ -1,0 +1,86 @@
+﻿
+@{
+    ViewBag.Title = "PostSell";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body id="page-top">
+    <!-- Header -->
+    <header class="masthead">
+        <div class="container">
+            <div class="intro-text">
+                <div class="intro-heading">ลงประกาศขาย</div>
+                <center>
+
+                    <form class="form-horizontal">
+                        <fieldset>
+                            <!-- Form Name -->
+                            <legend>ชื่อผู้ใช้ XXXXXXX</legend>
+                            <!-- Text input-->
+                            <div class="form-group">
+                                <div class="col-md-4">
+                                    <legend>หัวข้อ</legend> <input id="name" name="name" type="text" placeholder="โปรดกรอกหัวข้อ" class="form-control input-md" required="">
+                                </div>
+                            </div>
+                            <!-- Select Basic -->
+                            <div class="form-group">
+
+                                <div class="col-md-4">
+                                    <legend>พันธุ์ข้าว</legend><select id="blood_group" name="blood_group" class="form-control">
+                                        <option value="-1">Select</option>
+                                        <option value="1">Type A</option>
+                                        <option value="2">Type B</option>
+                                        <option value="3">Type C</option>
+                                        <option value="4">Type D</option>
+                                        <option value="5">Type E-</option>
+                                        <option value="6">Type F</option>
+                                        <option value="7">Type G-</option>
+                                        <option value="8">Type H-</option>
+                                    </select><legend>
+                                        <input id="email" name="email" type="text" placeholder="โปรดใส่ค่าความชื้น %" class="form-control input-md" required="">
+                                    </legend>เลือกไฟล์รูปข้าว</button><label class="control-label"></label>
+                                    <input id="input-b5" name="input-b5[]" type="file" multiple>
+                                    <script>
+		                                    $(document).on('ready', function() {
+		                                    $("#input-b5").fileinput({showCaption: false});
+		                                    });
+                                    </script>
+                                </div>
+                            </div>
+
+
+                            <!-- Password input-->
+                            <div class="form-group">
+                                <div class="col-md-4">
+                                    <input id="password" name="password" type="password" placeholder="โปรดระบุน้ำหนักก เกวียน / ตัน" class="form-control input-md" required=""><input id="password" name="password" type="password" placeholder="โปรดระบุน้ำหนักก กิโลกรัม" class="form-control input-md" required="">
+
+                                    <label class="control-label">เลือกไฟล์รูปน้ำหนักข้าว</label>
+                                    <input id="input-b5" name="input-b5[]" type="file" multiple>
+                                    <script>
+		                                    $(document).on('ready', function() {
+		                                    $("#input-b5").fileinput({showCaption: false});
+		                                    });
+                                    </script>
+                                </div>
+                            </div>
+
+
+
+                            <!-- Button -->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="signup"></label>
+                                <div class="col-md-4">
+                                    <button id="signup" name="signup" class="btn btn-success">ลงประกาศขาย</button>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+            </div>
+        </div>
+    </header>
+</body>
+</html>
+

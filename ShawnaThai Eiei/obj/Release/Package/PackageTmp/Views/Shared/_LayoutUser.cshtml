@@ -1,0 +1,193 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>ชาวนาไทย เว็บตลาดข้าวออนไลน์</title>
+    <!-- Bootstrap core CSS -->
+    <link href="~/Bootstrap/vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <!-- Custom fonts for this template -->
+    <link href="~/Bootstrap/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+    <!-- Custom styles for this template -->
+    <link href="~/Bootstrap/css/agency.min.css" rel="stylesheet">
+
+    <style type="text/css">
+        .msg_show {
+            position: fixed;
+            z-index: 90000;
+            margin: auto;
+            width: 800px;
+            height: 600px;
+            top: 50%;
+            left: 50%;
+            margin-top: -300px;
+            margin-left: -400px;
+            border-radius: 36px 36px 36px 36px;
+            -moz-border-radius: 36px 36px 36px 36px;
+            -webkit-border-radius: 36px 36px 36px 36px;
+            border: 0px solid #000000;
+            background-color: #FF3366;
+            text-align: center;
+            display: none;
+        }
+        .img-circle {
+            height: 70px;
+            width: 70px;
+            border-radius: 50%;
+        }
+        p.indent {
+            padding-left: 60em
+        }
+        .nav-user-menu-item {
+            position: relative;
+            height: 36px;
+            line-height: 36px;
+            display: block;
+            text-align: right;
+        }
+        .avatar {
+            background: url(//assets.kaidee.com/blackpearl/41aefe61f836b84ad53d2aec53d7f1b1/images/member-profile-avatar.png);
+            background-size: cover;
+        }
+        .avatar-section {
+            position: absolute;
+            top: 50px;
+            right: 8%;
+            text-align: center;
+            cursor: pointer;
+        }
+        .avatar-section .text-avatar.edit-bubble {
+            position: absolute;
+            top: 35px;
+            left: 40px;
+            width: 20px;
+            height: 20px;
+            background-color: hsla(0,0%,100%,.6);
+            color: rgba(0,0,0,.6);
+            border-radius: 10px;
+        }
+        .navbar-right
+        {
+            width: 200px;
+            height: 30px;
+        }
+
+        .navbar-btn{height: 60px;}
+    </style>
+
+    @if (ViewBag.ok != null)
+    {
+
+        <script>
+            alert("บันทึกเรียบร้อย");
+        </script>
+
+    }
+
+</head>
+<body id="page-top">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav" style="background:#000000;>
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="#page-top">ชาวนาไทย</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fa fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-left">
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="/Index/Index">หน้าหลัก</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="/User/Selling">รายการขายข้าว</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="/User/GoogleMap">แผนที่ของสหกรณ์</a>
+                    </li>
+                </ul>
+            </div>
+                    @if (HttpContext.Current.Session["U_IDCard"] != null)
+                    {
+                        <ul class="nav navbar-nav navbar-right" style="color:#ffffff">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <b>
+                                        <span class="glyphicon glyphicon-user"></span>
+                                        คุณ @HttpContext.Current.Session["U_Name"]<br />
+
+                                    </b>
+                                </a>
+
+                                <ul class="dropdown-menu" role="menu" style="min-width:200px">
+                                    <li style="text-align:center;font-size:16px;color:black"> @Html.ActionLink("ข้อมูลส่วนตัว", "ShowUser", "ProfileUser", null, new { style = "color:black" }) </li>
+                                    <li style="text-align:center;font-size:16px;color:black"> @Html.ActionLink("เปลี่ยนรหัสผ่าน", "ChangePassUser", "ProfileUser", null, new { style = "color:black" })</li>
+                                    <li style="text-align:center;font-size:16px;color:black">@Html.ActionLink("ออกจากระบบ", "Logout", "Login", null, new { style = "color:black" })</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    }
+                    else if (HttpContext.Current.Session["AD_ID"] != null)
+                    {
+                        <ul class="nav navbar-nav navbar-right" style="color:#ffffff">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <b>
+                                        <span class="glyphicon glyphicon-user"></span>
+                                        คุณ @HttpContext.Current.Session["AD_Name"]<br />
+
+                                    </b>
+                                </a>
+
+                                <ul class="dropdown-menu" role="menu" style="min-width:200px">
+
+                                    <li style="text-align:center;font-size:16px;color:black;"> @Html.ActionLink("ข้อมูลส่วนตัว", "ShowAdmin", "ProfileAdmin", null, new { style = "color:black;"  }) </li>
+                                    <li style="text-align:center;font-size:16px;color:black;"> @Html.ActionLink("เปลี่ยนรหัสผ่าน", "ChangePassAdmin", "ProfileAdmin", null, new { style = "color:black" })</li>
+                                    <li style="text-align:center;font-size:16px;color:black;"> @Html.ActionLink("ออกจากระบบ", "Logout", "Login", null, new { style = "color:black" })</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    }
+                    else
+                    {
+                         <div class="btn navbar-btn">
+                             <ul class="nav navbar-nav navbar-right" style="color:#ffffff">
+                                 <li class="nav-item">
+                                     <a class="nav-link js-scroll-trigger" href="/Login/Login">เข้าสู่ระบบ</a>
+                                 </li>
+                                 <li class="nav-item">
+                                     <a class="nav-link js-scroll-trigger" href="/Register/Register">ลงทะเบียน</a>
+                                 </li>
+                             </ul>
+                         </div>
+                    }
+            </div>
+         </nav>
+    @RenderBody()
+  <hr />
+
+
+            <script src="~/Scripts/jquery-3.2.1.min.js"></script>
+            <script src="~/Scripts/bootstrap.min.js"></script>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="~/Bootstrap/vendor/jquery/jquery.min.js"></script>
+    <script src="~/Bootstrap/vendor/popper/popper.min.js"></script>
+    <script src="~/Bootstrap/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/pdfobject.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="~/Bootstrap/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Contact form JavaScript -->
+    <script src="~/Bootstrap/js/jqBootstrapValidation.js"></script>
+    <script src="~/Bootstrap/js/contact_me.js"></script>
+    <!-- Custom scripts for this template -->
+    <script src="~/Bootstrap/js/agency.min.js"></script>
+
+</body>
+</html>

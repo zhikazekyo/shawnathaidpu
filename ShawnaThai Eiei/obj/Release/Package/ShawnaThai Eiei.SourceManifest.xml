@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <sitemanifest>
-  <IisApp path="C:\Users\TatchapongSukgorn\source\repos\ShawnaThai Eiei\ShawnaThai Eiei\obj\Release\Package\PackageTmp" />
-  <setAcl path="C:\Users\TatchapongSukgorn\source\repos\ShawnaThai Eiei\ShawnaThai Eiei\obj\Release\Package\PackageTmp" setAclResourceType="Directory" />
-  <setAcl path="C:\Users\TatchapongSukgorn\source\repos\ShawnaThai Eiei\ShawnaThai Eiei\obj\Release\Package\PackageTmp" setAclUser="anonymousAuthenticationUser" setAclResourceType="Directory" />
+  <IisApp path="C:\Users\TatchapongSukgorn\source\repos\ShawnathaiDPU\shawnathaidpu\ShawnaThai Eiei\obj\Release\Package\PackageTmp" />
+  <setAcl path="C:\Users\TatchapongSukgorn\source\repos\ShawnathaiDPU\shawnathaidpu\ShawnaThai Eiei\obj\Release\Package\PackageTmp" setAclResourceType="Directory" />
+  <setAcl path="C:\Users\TatchapongSukgorn\source\repos\ShawnathaiDPU\shawnathaidpu\ShawnaThai Eiei\obj\Release\Package\PackageTmp" setAclUser="anonymousAuthenticationUser" setAclResourceType="Directory" />
 </sitemanifest>

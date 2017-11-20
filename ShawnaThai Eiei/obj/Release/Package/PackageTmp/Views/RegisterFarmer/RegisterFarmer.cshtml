@@ -1,0 +1,96 @@
+﻿@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+</head>
+
+<body id="page-top">
+
+    <!-- Header -->
+    <header class="masthead">
+        <div class="container">
+            <br><br><br><br><br><br>
+
+            <div class="intro-heading"><font size=7>ลงทะเบียนชาวนา</font></div>
+            <center>
+
+
+                <form id="contactForm" name="sentMessage" novalidate>
+
+                    <div class="form-group">
+
+                        <div class="col-md-6">
+
+                            <div class="form-group">
+                                <input class="form-control" id="Farmer_Name" name="Farmer_Name" type="text" placeholder="ชื่อ *" required data-validation-required-message="ได้โปรดกรอก ชื่อ.">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" id="Farmer_LastName" name="Farmer_LastName" type="text" placeholder="นามสกุล*" required data-validation-required-message="ได้โปรดกรอก  นามสกุล.">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" id="Farmer_Tel" name="Farmer_Tel" type="tel" placeholder="เบอร์โทรศัพท์ของชาวนา *" required data-validation-required-message="ได้โปรดกรอก เบอร์โทรศัพท์ของชาวนา.">
+                                <p class="help-block text-danger"></p>
+                            </div>
+
+                            <div class="form-group">
+                                <input class="form-control" id="Coop_Name"name="Coop_Name" type="text" placeholder="ชื่อสหกรณ์*" required data-validation-required-message="ได้โปรดกรอก ชื่อสหกรณ์**.">
+                                <p class="help-block text-danger"></p>
+                            </div>
+
+                            <div class="form-group">
+                                <input class="form-control" id="Farmer_IDCard"name="Farmer_IDCard" type="text" placeholder="เลขบัตรประชาชน *" required data-validation-required-message="โปรดใส่เลขบัตรประชาชน">
+
+                                <div class="form-group">
+                                    <input type=file name=browse style="display: none;">
+                                    <input type=text name=file value="">
+                                    <input type=button onClick="browse.click();file.value=browse.value;" value="เลือกไฟล์รูปบัตรประชาชน">
+
+                                    <p class="help-block text-danger"></p>
+
+
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" id="Farmer_A_No" name="Farmer_A_No" type="text" placeholder="บ้านเลขที่ *" required data-validation-required-message="ได้โปรดกรอก บ้านเลขที่.">
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" id="Farmer_A_Sup" name="Farmer_A_Sup" type="text" placeholder="ตำบล*" required data-validation-required-message="ได้โปรดกรอก ตำบล.">
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" id="Farmer_A_District" name="Farmer_A_District" type="text" placeholder="อำเภอ*" required data-validation-required-message="ได้โปรดกรอก อำเภอ*.">
+                                    <p class="help-block text-danger"></p>
+                                </div>
+
+                                <div class="form-group">
+                                    <input class="form-control" id="Farmer_A_Province" name="Farmer_A_Province" type="text" placeholder="จังหวัด*" required data-validation-required-message="ได้โปรดกรอก จังหวัด*.">
+                                    <p class="help-block text-danger"></p>
+                                </div>
+            
+                                <div class="clearfix"></div>
+                                <div class="col-lg-12 text-center">
+                                    <div id="success"></div>
+                                    <button id="sendMessageButton" class="btn btn-xl" type="submit">ลงทะเบียน</button>
+                                    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+                                </div>
+
+                            </div>
+                        </div>
+                        </div>
+                </form>
+            </center>
+        </div>
+       
+    </header>
+
+</body>
+
+</html>
+}

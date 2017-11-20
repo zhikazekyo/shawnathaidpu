@@ -1,0 +1,126 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+@using (Html.BeginForm())
+{
+
+
+    <body id="page-top">
+        @Html.AntiForgeryToken()
+        <!-- Header -->
+        <header class="masthead">
+            <div class="container">
+                <div class="intro-text">
+                    <div class="intro-heading">ลงประกาศขาย</div>
+
+                    <center>
+                        <form class="form-horizontal">
+
+                            <!-- Form Name -->
+                            <!-- Text input-->
+                            <div class="form-group">
+                                <div class="col-md-4">
+
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                หมายเลขประกาศ
+                                <input id="ProD_IDSell" name="ProD_IDSell" type="text" placeholder="หมายเลขประกาศ." class="form-control input-md">
+
+                            </div>
+
+                            <!-- Select Basic -->
+                            <div class="form-group">
+
+                                <div class="col-md-4">
+
+
+
+                                    ระบุบค่าวามชื้น
+                                    <input id="ProD_Moisture" name="ProD_Moisture" type="text" placeholder="โปรดใส่ค่าความชื้น %" class="form-control input-md">
+                                    <label class="control-label"></label>
+                                    <input id="ProD_Pic" name="ProD_Pic" type="file" multiple>
+
+                                    <script>
+                                        $(document).on('ready', function () {
+                                            $("#input-b5").fileinput({ showCaption: false });
+                                        });
+                                    </script>
+                                </div>
+                            </div>
+
+                            <!-- Text input-->
+
+                            <div class="form-group">
+
+                                <div class="col-md-4">
+                                    กรอกราคา
+                                    <input id="ProD_Price" name="ProD_Price" type="number" placeholder="โปรดกรอกราคา" class="form-control input-md">
+
+                                </div>
+                            </div>
+
+
+
+
+
+                            <div class="col-md-4">
+                                ระบุบน้ำหนัก
+                                <input id="ProD_Weight" name="ProD_Weight" type="text" placeholder="โปรดระบุน้ำหนักก เกวียน / ตัน" class="form-control input-md">
+
+                                <label class="control-label">เลือกไฟล์รูปน้ำหนักข้าว</label>
+                                <input id="ProD_CertiWeightRice" name="ProD_CertiWeightRice" type="file" multiple>
+                                <script>
+                                    $(document).on('ready', function () {
+                                        $("#input-b5").fileinput({ showCaption: false });
+                                    });
+                                </script>
+                            </div>
+
+
+
+
+
+
+                            <!-- Text input-->
+                            <div class="form-group">
+
+                                <div class="col-md-4">
+                                    สายพันธุ์
+                                    <input id="RType_NID" name="RType_NID" type="text" placeholder="สายพันธุ์" class="form-control input-md">
+
+                                </div>
+                                <div class="col-md-4">
+                                    เลขประชาชน
+                                    <input id="Farmer_IDCard" name="Farmer_IDCard" type="text" placeholder="หมายเลขประชาชนชาวนา" class="form-control input-md">
+
+                                </div>
+                            </div>
+
+
+
+                            <!-- Button -->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="signup"></label>
+                                <div class="col-md-4">
+
+                                    <button id="sendMessageButton" class="btn btn-xl" type="submit">ลงประกาศขาย</button>
+                                    <div>
+                                        <font size="5" color="red" style="position:relative;top: 10px;right:10px">@ViewBag.Message</font>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </form>
+                    </center>
+                </div>
+
+            </div>
+            
+        </header>
+
+    </body>
+}
+</html>

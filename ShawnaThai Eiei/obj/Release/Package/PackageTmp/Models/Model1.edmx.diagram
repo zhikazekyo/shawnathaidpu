@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d3e38498da6e42d49fc72020e8551999" Name="Diagram1">
+        <EntityTypeShape EntityType="ShawnaThaiModel.Address_Coop" Width="1.5" PointX="0.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShawnaThaiModel.AddressFarmer" Width="1.5" PointX="3" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShawnaThaiModel.Admin_Cooperative" Width="1.5" PointX="0.75" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShawnaThaiModel.Cooperative" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShawnaThaiModel.Farmer" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShawnaThaiModel.History_Sell" Width="1.5" PointX="9.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShawnaThaiModel.Product_Rice" Width="1.5" PointX="7.5" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShawnaThaiModel.RiceType" Width="1.5" PointX="5.25" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShawnaThaiModel.sysdiagram" Width="1.5" PointX="7.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShawnaThaiModel.User" Width="1.5" PointX="12" PointY="1.5" IsExpanded="true" />
+        <AssociationConnector Association="ShawnaThaiModel.FK_Cooperative_Address_Coop" ManuallyRouted="false" />
+        <AssociationConnector Association="ShawnaThaiModel.FK_Farmer_AddressFarmer" ManuallyRouted="false" />
+        <AssociationConnector Association="ShawnaThaiModel.FK_Cooperative_Admin_Cooperative" ManuallyRouted="false" />
+        <AssociationConnector Association="ShawnaThaiModel.FK_Farmer_Cooperative" ManuallyRouted="false" />
+        <AssociationConnector Association="ShawnaThaiModel.FK_Product_Rice_Farmer" ManuallyRouted="false" />
+        <AssociationConnector Association="ShawnaThaiModel.FK_History_Sell_Product_Rice" ManuallyRouted="false" />
+        <AssociationConnector Association="ShawnaThaiModel.FK_RiceType_Product_Rice" ManuallyRouted="false" />
+        <AssociationConnector Association="ShawnaThaiModel.History_BuyerUser" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

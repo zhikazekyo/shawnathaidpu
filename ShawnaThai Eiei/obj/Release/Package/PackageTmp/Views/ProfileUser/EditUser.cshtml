@@ -1,0 +1,99 @@
+﻿@model ShawnaThai_Eiei.Models.User
+@using System.Globalization;
+@{
+    ViewBag.Title = "EditUser";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style type="text/css">
+        .form-group {
+            height: 50px
+        }
+
+        .masthead {
+            height: 980px
+        }
+    </style>
+</head>
+@using (Html.BeginForm())
+{
+    <body id="page-top">
+        <header class="masthead">
+            <br><br>
+            <div class="container">
+                <div class="col-md-12">
+                    <br><br><br><br>
+                    <div class="form-group">
+                        <div class="col-md-4" style="text-align:left; position:relative;right:-268px;">
+                            <label style="color:gold;font-size:24px;">เลขบัตรประชาชน : </label>
+                        </div>
+                        <div class="col-md-8" style="text-align:left; position:relative;right:-450px; top:-40px">
+                            <input name="Update_IDCard" class="form-control" style="width:300px" type="text" value="@Model.U_IDCard" readonly>
+                            <br />
+                        </div>
+                        <p class="help-block text-danger"></p>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-4" style="text-align:left; position:relative;right:-280px;">
+                            <label style="color:gold;font-size:24px;">ชื่อ : </label>
+                        </div>
+                        <div class="col-md-8" style="text-align:left; position:relative;right:-450px; top:-40px">
+                            <input name="Update_Name" class="form-control" style="width:300px" type="text" value="@Model.U_Name">
+                            <br />
+                        </div>
+                        <p class="help-block text-danger"></p>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-4" style="text-align:left; position:relative;right:-280px;">
+                            <label style="color:gold;font-size:24px;">นามสกุล : </label>
+                        </div>
+                        <div class="col-md-8" style="text-align:left; position:relative;right:-450px; top:-40px">
+                            <input name="Update_Lastname" class="form-control" style="width:300px" type="text" value="@Model.U_Lastname">
+                            <br />
+                        </div>
+                        <p class="help-block text-danger"></p>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-4" style="text-align:left; position:relative;right:-280px;">
+                            <label style="color:gold;font-size:24px;">เบอร์โทรศัพท์ : </label>
+                        </div>
+                        <div class="col-md-8" style="text-align:left; position:relative;right:-450px; top:-40px">
+                            <input name="Update_Tel" class="form-control" style="width:300px" type="text" value="@Model.U_Tel">
+                            <br />
+                        </div>
+                        <p class="help-block text-danger"></p>
+                    </div>
+
+
+                    <div class="form-group">
+                        <div class="col-md-8" style="position:relative;right:-180px">
+                            <input class="btn btn-xl" type="submit" value="บันทึกข้อมูล" />
+                            <input class="btn btn-xl" type="button" value="ยกเลิก" onclick="location.href='@Url.Action("ShowUser", "ProfileUser")';" />
+
+                        </div>
+                    </div>
+
+                    @if (ViewBag.ok != null)
+                    {
+
+                        <script>
+                                alert("บันทึกข้อมูลเรียบร้อย");
+
+                                    location.href = '@Url.Action("ShowUser", "ProfileUser")';
+
+
+                        </script>
+
+                    }
+
+                </div>
+            </div>
+        </header>
+    </body>
+}
+</html>

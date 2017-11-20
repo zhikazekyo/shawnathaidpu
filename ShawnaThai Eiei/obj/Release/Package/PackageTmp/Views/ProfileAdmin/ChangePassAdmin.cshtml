@@ -1,0 +1,96 @@
+﻿@model ShawnaThai_Eiei.Models.Admin_Cooperative
+@{
+    ViewBag.Title = "ChangePassAdmin";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style type="text/css">
+        .form-group {
+            height: 50px
+        }
+
+        .masthead {
+            height: 980px
+        }
+    </style>
+</head>
+
+@using (Html.BeginForm())
+{
+    <body id="page-top">
+        <header class="masthead">
+            <br /><br />
+            <div class="container">
+                <div class="col-md-12">
+                    <br><br><br><br>
+                    <div class="form-group">
+                        
+                        <div class="col-md-8" style="text-align:left; position:relative;right:-450px; top:-40px">
+                            <input id="AD_ID" name="AD_ID" class="form-control" style="width:300px" type="hidden" value="@HttpContext.Current.Session["AD_ID"]" readonly>
+                            <br />
+                        </div>
+                        <p class="help-block text-danger"></p>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-4" style="text-align:left; position:relative;right:-285px;">
+                            <label style="color:gold;font-size:24px;">รหัสผ่านเก่า : </label>
+                        </div>
+                        <div class="col-md-8" style="text-align:left; position:relative;right:-450px; top:-40px">
+                            <input id="AD_Password" name="AD_Password" class="form-control" style="width:300px" type="password" minlength="6" maxlength="18" title="ใส่รหัสผ่านเก่า">
+                            <p style="color:red ; font-weight:bold">@ViewBag.Error1</p>
+                            <br />
+                        </div>
+                        <p class="help-block text-danger"></p>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-4" style="text-align:left; position:relative;right:-280px;">
+                            <label style="color:gold;font-size:24px;">รหัสผ่านใหม่ : </label>
+                        </div>
+                        <div class="col-md-8" style="text-align:left; position:relative;right:-450px; top:-40px">
+                            <input id="AD_New_Password" name="AD_New_Password" class="form-control" style="width:300px" type="password" minlength="6" maxlength="18" title="ใส่รหัสผ่านใหม่ 6 -18 ตัว">
+                            <p style="color:red ; font-weight:bold">@ViewBag.Error2</p>
+                            <br />
+                        </div>
+                        <p class="help-block text-danger"></p>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-4" style="text-align:left; position:relative;right:-218px;">
+                            <label style="color:gold;font-size:24px;">รหัสผ่านใหม่อีกครั้ง : </label>
+                        </div>
+                        <div class="col-md-8" style="text-align:left; position:relative;right:-450px; top:-40px">
+                            <input id="AD_New_Password_Again" name="AD_New_Password_Again" class="form-control" style="width:300px" type="password" minlength="6" maxlength="18">
+                            <p style="color:red ; font-weight:bold">@ViewBag.Error1</p>
+                            <br />
+                        </div>
+                        <p class="help-block text-danger"></p>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-8" style="position:relative;right:-180px">
+                            <input class="btn btn-xl" type="submit" value="บันทึก" onclick="myFunction()" />
+                            <input class="btn btn-xl" type="submit" value="ยกเลิก" onclick="location.href='@Url.Action("ShowAdmin", "ProfileAdmin")';" />
+
+                        </div>
+                    </div>
+
+                    @if (ViewBag.ok != null)
+                    {
+
+                        <script>
+                            alert("เปลี่ยนรหัสผ่านเรียบร้อย");
+                        </script>
+
+                    }
+                </div>
+            </div>
+            <hr>
+        </header>
+
+    </body>
+}
+</html>
