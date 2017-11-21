@@ -311,7 +311,6 @@
     <Compile Include="Controllers\ForgotPasswordController.cs" />
     <Compile Include="Controllers\IndexController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
-    <Compile Include="Controllers\MapController.cs" />
     <Compile Include="Controllers\PostSellController.cs" />
     <Compile Include="Controllers\ProfileAdminController.cs" />
     <Compile Include="Controllers\ProfileUserController.cs" />
@@ -411,6 +410,7 @@
     <Content Include="Views\ForgotPassword\ForgotAdminID.cshtml" />
     <Content Include="Views\ForgotPassword\SelectForgot.cshtml" />
     <Content Include="Views\Map\GoogleMap.cshtml" />
+    <Content Include="Views\User\GoogleMap.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

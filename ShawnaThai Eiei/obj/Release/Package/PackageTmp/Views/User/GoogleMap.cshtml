@@ -1,0 +1,79 @@
+﻿@{
+    ViewBag.Title = "GoogleMap";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        #map {
+            width: 80%;
+            height: 750px;
+            top: 100%;
+            left: 10%;
+            background-color: grey;
+        }
+
+        div {
+            color: black
+        }
+    </style>
+
+</head>
+<body id="page-top">
+    <header class="masthead">
+        <br><br><br><br><br>
+        <a class="btn btn-xl">แผนที่สหกรณ์</a><br><br>
+        <div id="map"></div>
+        <script>
+
+
+		var locations = [
+		  ['สหกรณ์หนองปลาไหล เบอร์โทรศัพท์: 097-002-2461', 13.8696105, 100.5478615],
+		  ['สหกรณ์คลองประปา เบอร์โทรศัพท์: 093-263-0990', 13.867766, 100.550769],
+		  ['สหกรณ์บึงบรเพชร เบอร์โทรศัพท์: 088-523-8366', 13.874235, 100.544711],
+		  ['สหกรณ์ทานตะวัน เบอร์โทรศัพท์: 091-254-7852',13.871970, 100.553834]
+		];
+
+      function initMap() {
+			var mapOptions = {
+			  center: {lat: 13.870298, lng: 100.5498615},
+			  zoom: 16,
+			}
+
+			var maps = new google.maps.Map(document.getElementById("map"),mapOptions);
+
+			var marker, i, info;
+
+			for (i = 0; i < locations.length; i++) {
+
+				marker = new google.maps.Marker({
+				   position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+				   map: maps,
+				   title: locations[i][0]
+				});
+
+				info = new google.maps.InfoWindow();
+
+			  google.maps.event.addListener(marker, 'click', (function(marker, i) {
+				return function() {
+				  info.setContent(locations[i][0]);
+				  info.open(maps, marker);
+				}
+			  })(marker, i));
+
+			}
+
+		}
+        </script>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBGWlbIKRjQV1WUujX7AlfU9VXgbZp-230&callback=initMap">
+        </script>
+        <br><br><br><br>
+    </header>
+</body>
+</html>
